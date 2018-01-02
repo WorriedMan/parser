@@ -1,0 +1,17 @@
+#Города, в которых проводить опрос
+city:moskva,izhevsk,sarapul,perm,votkinsk,igra,uva,berezniki,krasnodar
+#Настройки mysql
+mysql_url:localhost
+mysql_port:3306
+mysql_database:avito
+mysql_username:root
+mysql_password:secret
+#Сколько страниц опрашивать
+pages:100
+#Сколько секунд спать после того, как опрошена одна страница (защита от блокировки авито)
+page_sleep_time:10
+#Сколько секунд спать после того, как опрошен один город (защита от блокировки авито)
+city_sleep_time:7200
+#Настройки вывода текста в консоль
+debug:0
+percent_count:20

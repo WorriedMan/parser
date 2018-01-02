@@ -1,7 +1,17 @@
 group 'avito_parser'
-version '1.0-SNAPSHOT'
+version ''
 
+apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'java'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.2'
+    }
+}
 
 sourceCompatibility = 1.8
 
@@ -12,5 +22,17 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'org.jsoup:jsoup:1.11.2'
+    compile files('libs/mysql-connector.jar')
+}
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'Parser'
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
